@@ -6,6 +6,7 @@ export const useNotes = (url) => {
   const fetchNotes = useCallback(async () => {
     try {
       const response = await axios.get(url);
+      console.log(response);
       setNotes(response.data.notes);
     } catch (err) {
       console.error(err);

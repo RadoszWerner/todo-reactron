@@ -1,12 +1,12 @@
 import "./App.css";
-import NavBar from "./components/navbar";
 import NotesPanel from "./components/notespanel";
+import Ui from "./components/ui";
 
 const App = () => {
   return (
-    <NavBar>
+    <Ui>
       <NotesPanel></NotesPanel>
-    </NavBar>
+    </Ui>
   );
 };
 

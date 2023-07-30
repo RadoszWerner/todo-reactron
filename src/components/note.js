@@ -6,7 +6,7 @@ const Note = ({ note }) => {
   return (
     <Card variant="outlined">
       <CardContent>
-        <Typography>${text}</Typography>
+        <Typography>{`${text}`}</Typography>
       </CardContent>
     </Card>
   );
