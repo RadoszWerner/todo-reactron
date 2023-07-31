@@ -27,5 +27,4 @@ node_modules
 todo-backend/.idea/shelf/
 todo-backend/.idea/workspace.xml
 todo-backend/.idea
-todo-backend/.mvn
 todo-backend/target/
