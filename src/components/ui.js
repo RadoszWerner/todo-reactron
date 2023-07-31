@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "./navbar";
 import { styled } from "@mui/system";
+import AddNote from "./addnote";
 
 export const PageContent = styled("div")({
   marginTop: "50px",
@@ -9,7 +10,9 @@ export const PageContent = styled("div")({
 const Ui = ({ children }) => {
   return (
     <>
-      <NavBar />
+      <NavBar>
+        <AddNote></AddNote>
+      </NavBar>
       <PageContent>{children}</PageContent>
     </>
   );

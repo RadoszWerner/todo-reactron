@@ -1,14 +1,17 @@
-import { Card, CardContent, Typography } from "@mui/material";
+import { Card, CardContent, Container, Typography } from "@mui/material";
 import * as React from "react";
 
 const Note = ({ note }) => {
   const { text } = note;
+
   return (
-    <Card variant="outlined">
-      <CardContent>
-        <Typography>{`${text}`}</Typography>
-      </CardContent>
-    </Card>
+    <Container>
+      <Card variant="outlined">
+        <CardContent>
+          <Typography>{`${text}`}</Typography>
+        </CardContent>
+      </Card>
+    </Container>
   );
 };
 

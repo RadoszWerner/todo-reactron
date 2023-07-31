@@ -1,19 +1,23 @@
 import * as React from "react";
-import Grid from "@mui/material/Grid";
 import useNotes from "../hooks/usenotes";
 import Note from "./note";
+import { PaperStyle } from "../styles/styles";
+import { NoteStyle } from "../styles/styles";
+import { CenteredContainer } from "../styles/styles";
 
 const NotesPanel = () => {
-  const { notes } = useNotes("db/todos.json");
+  const { notes } = useNotes();
 
   return (
-    <>
-      {notes.map((note) => (
-        <Grid item xs={12} sm={6} md={4} key={note.id}>
-          <Note note={note} key={note.id} />
-        </Grid>
-      ))}
-    </>
+    <CenteredContainer>
+      <PaperStyle elevation={3}>
+        {notes.map((note) => (
+          <NoteStyle elevation={6}>
+            <Note note={note} key={note.id} />
+          </NoteStyle>
+        ))}
+      </PaperStyle>
+    </CenteredContainer>
   );
 };
 
