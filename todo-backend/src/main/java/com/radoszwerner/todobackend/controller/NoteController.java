@@ -24,4 +24,17 @@ public class NoteController {
     public List<Note> getAllNotes(){
         return noteService.getAllNotes();
     }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteNoteById(@PathVariable int id) {
+        noteService.deleteNoteById(id);
+        return "Note with ID " + id + " deleted successfully.";
+    }
+
+    @PutMapping("/update/{id}")
+    public String updateNoteStatus(@PathVariable int id, @RequestParam boolean done) {
+        noteService.updateNoteStatus(id, done);
+        return "Note with ID " + id + " status updated successfully.";
+    }
+
 }

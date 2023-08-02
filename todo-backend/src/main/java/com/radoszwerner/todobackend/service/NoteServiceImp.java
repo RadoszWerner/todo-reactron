@@ -17,8 +17,21 @@ public class NoteServiceImp implements NoteService{
         return noteRepository.save(note);
     }
 
+
+
     @Override
     public List<Note> getAllNotes() {
         return noteRepository.findAll();
+    }
+    @Override
+    public void deleteNoteById(int id) {
+        noteRepository.deleteById(id);
+    }
+
+    @Override
+    public void updateNoteStatus(int id, boolean done){
+        Note note = noteRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid note ID"));
+        note.setDone(done);
     }
 }
