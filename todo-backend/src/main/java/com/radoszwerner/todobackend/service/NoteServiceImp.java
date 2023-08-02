@@ -33,5 +33,6 @@ public class NoteServiceImp implements NoteService{
         Note note = noteRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid note ID"));
         note.setDone(done);
+        noteRepository.flush();
     }
 }

@@ -7,12 +7,6 @@ export const PaperStyle = styled(Paper)({
   margin: "20 px auto",
 });
 
-export const NoteStyle = styled(Paper)({
-  margin: "10px",
-  padding: "15px",
-  textAllign: "left",
-});
-
 export const CenteredContainer = styled("div")({
   display: "flex",
   justifyContent: "center",
