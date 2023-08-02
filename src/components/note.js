@@ -23,11 +23,9 @@ const Note = ({ note }) => {
           headers: { "Content-Type": "application/json" },
         }
       );
-      console.log(response);
       if (response.ok) {
         if (response.bodyUsed) {
           const data = await response.json();
-          console.log(data);
         } else {
           console.log("Note status updated successfully.");
         }
@@ -56,6 +54,11 @@ const Note = ({ note }) => {
       console.error("Error deleting note:", error);
     }
   };
+
+  const textStyle = {
+    textDecoration: note.done ? "line-through" : "none",
+  };
+
   return (
     <Container>
       <Card variant="outlined">
@@ -67,7 +70,7 @@ const Note = ({ note }) => {
           >
             <FormControlLabel
               control={<Checkbox checked={isChecked} />}
-              label={note.text}
+              label={<span style={textStyle}>{note.text}</span>}
               onChange={handleNoteUpdate}
             />
             <IconButton

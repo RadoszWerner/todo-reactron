@@ -13,9 +13,7 @@ const AddNote = () => {
     setText(e.target.value);
   };
   const handleButtonClick = async (e) => {
-    e.preventDefault();
     const note = { text };
-    console.log(note);
     try {
       const response = await fetch("http://localhost:8080/note/add", {
         method: "POST",
@@ -34,11 +32,18 @@ const AddNote = () => {
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleButtonClick();
+    }
+  };
+
   return (
     <>
       <TextField
         value={text}
         onChange={handleInputChange}
+        onKeyDown={handleKeyPress}
         label="What do you want to do?"
       />
       <Button
