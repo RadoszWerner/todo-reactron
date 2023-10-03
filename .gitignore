@@ -22,3 +22,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 node_modules
+
+# Default ignored files
+todo-backend/.idea/shelf/
+todo-backend/.idea/workspace.xml
+todo-backend/.idea
+todo-backend/target/
